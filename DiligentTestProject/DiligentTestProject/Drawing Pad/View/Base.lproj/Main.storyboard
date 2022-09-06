@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bnj-k7-SPu">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Drawing Pad View Controller-->
+        <scene sceneID="4DM-MQ-lXq">
+            <objects>
+                <viewController storyboardIdentifier="DrawingPadViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bnj-k7-SPu" customClass="DrawingPadViewController" customModule="DiligentTestProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YRO-aV-6dF"/>
+                        <viewControllerLayoutGuide type="bottom" id="WOs-ue-NFc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2Sa-Cf-1SP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L06-IZ-4jf" userLabel="MainImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u6b-9L-ok0" userLabel="TempImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="7o9-bE-fWI">
+                                <rect key="frame" x="70" y="10" width="235" height="32"/>
+                                <segments>
+                                    <segment title="Red"/>
+                                    <segment title="Blue"/>
+                                    <segment title="Green"/>
+                                    <segment title="Eraser"/>
+                                </segments>
+                                <connections>
+                                    <action selector="brushParameterChanged:" destination="bnj-k7-SPu" eventType="valueChanged" id="Ffs-eW-tHd"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="jRo-lx-Yhq"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="L06-IZ-4jf" firstAttribute="leading" secondItem="2Sa-Cf-1SP" secondAttribute="leading" id="3A4-Us-EU2"/>
+                            <constraint firstAttribute="bottom" secondItem="u6b-9L-ok0" secondAttribute="bottom" id="6KZ-GK-AAJ"/>
+                            <constraint firstItem="7o9-bE-fWI" firstAttribute="centerX" secondItem="u6b-9L-ok0" secondAttribute="centerX" id="GO0-G5-6aE"/>
+                            <constraint firstAttribute="trailing" secondItem="L06-IZ-4jf" secondAttribute="trailing" id="HlZ-j3-cp2"/>
+                            <constraint firstItem="u6b-9L-ok0" firstAttribute="top" secondItem="2Sa-Cf-1SP" secondAttribute="top" id="IdQ-WT-Wa8"/>
+                            <constraint firstAttribute="bottom" secondItem="L06-IZ-4jf" secondAttribute="bottom" id="eUi-ty-BPZ"/>
+                            <constraint firstItem="L06-IZ-4jf" firstAttribute="top" secondItem="2Sa-Cf-1SP" secondAttribute="top" id="hOc-AC-GYd"/>
+                            <constraint firstItem="7o9-bE-fWI" firstAttribute="top" secondItem="jRo-lx-Yhq" secondAttribute="top" constant="10" id="nXx-WI-Kdo"/>
+                            <constraint firstAttribute="trailing" secondItem="u6b-9L-ok0" secondAttribute="trailing" id="nhP-dH-kBu"/>
+                            <constraint firstItem="u6b-9L-ok0" firstAttribute="leading" secondItem="2Sa-Cf-1SP" secondAttribute="leading" id="ztJ-O2-UK4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="colorChangeControl" destination="7o9-bE-fWI" id="sXI-b5-eXd"/>
+                        <outlet property="mainImageView" destination="L06-IZ-4jf" id="2kF-W3-1Le"/>
+                        <outlet property="tempImageView" destination="u6b-9L-ok0" id="cxU-Df-K3W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t94-Py-4nT" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-295.19999999999999" y="477.21139430284859"/>
+        </scene>
+        <!--Painiting List View Controller-->
+        <scene sceneID="Df9-im-Vjh">
+            <objects>
+                <viewController storyboardIdentifier="PainitingListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SKs-Gy-wqc" customClass="PainitingListViewController" customModule="DiligentTestProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1xM-u7-bUV">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yav-AT-qbu">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="u7e-g0-ZDL"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Yav-AT-qbu" firstAttribute="top" secondItem="u7e-g0-ZDL" secondAttribute="top" id="CIP-D8-JLH"/>
+                            <constraint firstItem="u7e-g0-ZDL" firstAttribute="bottom" secondItem="Yav-AT-qbu" secondAttribute="bottom" id="TaN-V2-LOy"/>
+                            <constraint firstItem="u7e-g0-ZDL" firstAttribute="trailing" secondItem="Yav-AT-qbu" secondAttribute="trailing" id="emS-cv-04e"/>
+                            <constraint firstItem="Yav-AT-qbu" firstAttribute="leading" secondItem="u7e-g0-ZDL" secondAttribute="leading" id="ksk-CM-h8V"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="listTableView" destination="Yav-AT-qbu" id="L60-VL-IGc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wWb-gG-WYT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="455" y="477"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
